@@ -1,0 +1,14 @@
+services:
+  mongo:
+    image: mongo:7.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: '@Test12345'
+      MONGO_INITBD_DATABASE: dev
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
+    driver: local
